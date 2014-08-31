@@ -1,0 +1,32 @@
+$grey: #b4b4b4
+
+.autocompleter
+  position: absolute
+  left: 0
+  right: 0
+  border: 1px solid #000
+
+.autocomplete-options
+  list-style: none
+  margin: 0
+  padding: 0
+
+.autocomplete-option
+  display: block
+  position: relative
+  padding: rhythm(0.5)
+  +trailing-border(1px, 0.5)
+
+  li:last-child > &
+    padding-bottom: rhythm(0.5)
+    border-bottom: none
+
+.autocomplete-plus
+  +adjust-font-size-to(12px, 1)
+  position: absolute
+  right: rhythm(0.5, 12px)
+  top: rhythm(0.4, 12px)
+  padding: rhythm(0.15, 12px) rhythm(0.2, 12px)
+  border: 1px solid $grey
+  text-align: center
+  color: $grey

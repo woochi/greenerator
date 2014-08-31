@@ -1,0 +1,59 @@
+{
+  "name": "gulp-starter",
+  "version": "0.1.1",
+  "description": "Gulp starter with common tasks and scenarios",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/greypants/gulp-starter.git"
+  },
+  "browser": {
+    "jquery": "./build/jquery/dist/jquery.js",
+    "react": "./build/react/react.js",
+    "underscore": "./build/underscore/underscore.js",
+    "backbone": "./build/backbone/backbone.js"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim",
+      "coffeeify",
+      "hbsfy"
+    ]
+  },
+  "browserify-shim": {
+    "jquery": "$",
+    "react": "React",
+    "underscore": "_",
+    "backbone": "Backbone"
+  },
+  "devDependencies": {
+    "browserify": "5.11.0",
+    "browserify-shim": "3.7.0",
+    "coffee-script": "1.8.0",
+    "coffeeify": "0.7.0",
+    "connect": "~2.14.3",
+    "gulp": "3.8.0",
+    "gulp-bower": "0.0.4",
+    "gulp-changed": "~0.3.0",
+    "gulp-ruby-sass": "0.4.3",
+    "gulp-imagemin": "~0.1.5",
+    "gulp-livereload": "~1.2.0",
+    "gulp-notify": "~1.2.4",
+    "gulp-open": "~0.2.8",
+    "gulp-util": "*",
+    "gulp-autoprefixer": "*",
+    "hbsfy": "~1.3.2",
+    "vinyl-source-stream": "~0.1.1",
+    "gulp-stylus": "*"
+  },
+  "dependencies": {
+    "express": "*",
+    "serve-favicon": "2.1.1",
+    "morgan": "*",
+    "cookie-parser": "*",
+    "body-parser": "*",
+    "stylus": "*",
+    "jade": "*",
+    "nib": "*",
+    "serve-favicon": "*"
+  }
+}
