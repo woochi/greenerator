@@ -28,7 +28,6 @@ app.use (req, res, next) ->
   next err
   return
 
-
 #/ error handlers
 
 # development error handler

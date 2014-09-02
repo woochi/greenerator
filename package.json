@@ -10,7 +10,9 @@
     "jquery": "./build/jquery/dist/jquery.js",
     "react": "./build/react/react.js",
     "underscore": "./build/underscore/underscore.js",
-    "backbone": "./build/backbone/backbone.js"
+    "backbone": "./build/backbone/backbone.js",
+    "react-backbone": "./build/react-backbone/react-backbone.js",
+    "react-mixin-manager": "./build/react-mixin-manager/react-mixin-manager.js"
   },
   "browserify": {
     "transform": [
@@ -31,10 +33,10 @@
     "coffee-script": "1.8.0",
     "coffeeify": "0.7.0",
     "connect": "~2.14.3",
-    "gulp": "3.8.0",
+    "gulp": "3.8.7",
     "gulp-bower": "0.0.4",
     "gulp-changed": "~0.3.0",
-    "gulp-ruby-sass": "0.4.3",
+    "gulp-ruby-sass": "0.7.1",
     "gulp-imagemin": "~0.1.5",
     "gulp-livereload": "~1.2.0",
     "gulp-notify": "~1.2.4",
