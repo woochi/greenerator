@@ -2,6 +2,12 @@
 
 SkillItem = React.createClass
 
+  componentDidMount: ->
+    @props.skill.on "change:level", @onSkillAllocation
+
+  componentWillUnmount: ->
+    @props.skill.off "change:level", @onSkillAllocation
+
   render: ->
     skill = @props.skill
     li key: skill.id, className: "skill",
@@ -12,10 +18,12 @@ SkillItem = React.createClass
         min: skill.get("base")
         max: 99
         value: Math.max(skill.get("base"), skill.get("level"))
-        onChange: @setSkillLevel
+        onChange: @allocateSkill
 
-  setSkillLevel: (event) ->
+  allocateSkill: (event) ->
     @props.skill.allocate event.target.value
+
+  onSkillAllocation: ->
     @forceUpdate()
 
 module.exports = SkillItem

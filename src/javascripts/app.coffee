@@ -70,7 +70,7 @@ skillList = [
   {id: 63, name: "Block", base: 0}
   {id: 64, name: "Roping", base: 0}
   {id: 65, name: "Disguise", base: 0}
-  {id: 66, name: "forensics", base: 0}
+  {id: 66, name: "Forensics", base: 0}
   {id: 67, name: "Hypnotism", base: 0}
 ]
 
