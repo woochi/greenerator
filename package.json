@@ -8,7 +8,7 @@
   },
   "browser": {
     "jquery": "./build/jquery/dist/jquery.js",
-    "react": "./build/react/react.js",
+    "react": "./build/react/react-with-addons.js",
     "underscore": "./build/underscore/underscore.js",
     "backbone": "./build/backbone/backbone.js",
     "react-backbone": "./build/react-backbone/react-backbone.js",

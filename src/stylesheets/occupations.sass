@@ -1,0 +1,24 @@
+.occupation-list
+  list-style: none
+  overflow-y: auto
+  float: left
+  width: 13%
+  height: 100%
+  margin: 0
+  padding: 0
+  border-right: 1px solid black
+
+.occupation
+  +user-select(none)
+  cursor: default
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+  padding: rhythm(0.5)
+
+  &:hover
+    background: $gray
+
+  &.current
+    background: $blue
+    color: $white

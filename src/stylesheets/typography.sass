@@ -1,0 +1,61 @@
+$base-font-size: 14px
+$base-line-height: 22px
+$base-font-family: Helvetica, sans-serif
+$base-font-weight: 400
+$base-font-color: #333
+
+$rhythm-unit: "rem"
+
+$h1-font-size: 32px
+$h2-font-size: 28px
+$h3-font-size: 24px
+$h4-font-size: 20px
+$h5-font-size: 16px
+$h6-font-size: 16px
+
+$header-font-weight: $base-font-weight
+$header-color: $base-font-color
+
+%base-margin
+  margin: rhythm(1) 0
+
+html
+  font-size: 100%
+
+body
+  font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family
+
+%header
+  @extend %base-margin
+  font-weight: $header-font-weight
+  color: $header-color
+
+h1
+  @extend %header
+  +adjust-font-size-to($h1-font-size)
+
+h2
+  @extend %header
+  +adjust-font-size-to($h2-font-size)
+
+h3
+  @extend %header
+  +adjust-font-size-to($h3-font-size)
+
+h4
+  @extend %header
+  +adjust-font-size-to($h4-font-size)
+
+h5
+  @extend %header
+  +adjust-font-size-to($h5-font-size)
+
+h6
+  @extend %header
+  +adjust-font-size-to($h6-font-size)
+
+p
+  @extend %base-margin
+
+ul, ol
+  @extend %base-margin

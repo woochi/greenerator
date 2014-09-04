@@ -1,5 +1,6 @@
 {div, form, fieldset, legend, label, input, ul, li} = React.DOM
 
+OccupationList = require("./occupation_list.coffee")
 Investigator = require("./investigator.coffee")
 Characteristics = require("./characteristics.coffee")
 Status = require("./status.coffee")
@@ -9,16 +10,16 @@ Generator = React.createClass
 
   render: ->
     form className: "generator",
-      Investigator
+      OccupationList
         character: @props.character
         occupations: @props.occupations
       Characteristics
-        character: @props.character
-      Status
         character: @props.character
       SkillList
         character: @props.character
         occupations: @props.occupations
         skills: @props.skills
+      Investigator
+        character: @props.character
 
 module.exports = Generator
