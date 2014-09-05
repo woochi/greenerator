@@ -1,4 +1,4 @@
-{div, fieldset, legend, h5, ul, dl, dt, dd, li, label, input} = React.DOM
+{div, fieldset, legend, h5, ul, dl, dt, dd, li, label, input, i} = React.DOM
 
 SkillItem = require("./skill_item.coffee")
 PointCounter = require("./point_counter.coffee")
@@ -22,18 +22,24 @@ SkillList = React.createClass
         interestSkills.push skill
 
     div className: "generator-column",
-      fieldset {},
-        legend {}, "Investigator skills"
+      div className: "column-header",
         PointCounter
           occupations: @props.occupations
           character: @props.character
           skills: @props.skills
-        h5 {}, "Occupation skills"
-        ul {},
-          @renderSkills occupationSkills
-        h5 {}, "Interest skills"
-        ul {},
-          @renderSkills interestSkills
+      div className: "column-body",
+        fieldset {},
+          legend {},
+            i className: "fa fa-fw fa-briefcase"
+            "Occupation skills"
+          ul {},
+            @renderSkills occupationSkills
+        fieldset {},
+          legend {},
+            i className: "fa fa-fw fa-mortar-board"
+            "Interest skills"
+          ul {},
+            @renderSkills interestSkills
 
   renderSkills: (skills) ->
     skills.map (skill) ->

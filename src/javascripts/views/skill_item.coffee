@@ -11,9 +11,10 @@ SkillItem = React.createClass
   render: ->
     skill = @props.skill
     li key: skill.id, className: "skill",
-      label {},
+      label className: "skill-label",
         skill.get("name")
       input
+        className: "skill-input"
         type: "number"
         min: skill.get("base")
         max: 99

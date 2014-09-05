@@ -15,7 +15,6 @@ class Characters extends Backbone.Collection
     education = Dice.roll("3d6+3")
 
     new Character
-      name: "Desmond Lee"
       sex: "male"
       age: education + 6 # min: edu + 6, +1 edu for each +10 years, -1 STR/CON/DEX/APP for +10 years after 40 years
       nationality: "Jamaican"

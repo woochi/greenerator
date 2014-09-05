@@ -1,3 +1,11 @@
+$header-background: $cyan
+$generator-body-background: $white
+
+$header-border: $cyan6
+$generator-body-border: darken($generator-body-background, 25%)
+
+$column-header-height: rhythm(5)
+
 body, html
   overflow: hidden
   width: 100%
@@ -12,14 +20,65 @@ body, html
   height: 100%
   margin: 0
 
+.logo
+  width: 100%
+  height: auto
+  margin-top: rhythm(0.5)
+  opacity: 0.5
+
 .generator-column
-  overflow-y: auto
+  position: relative
   float: left
-  width: 29%
+  width: 27.5%
   height: 100%
   margin: 0
-  padding: 0 rhythm(1)
-  border-right: 1px solid black
+  background: $white
 
-  &:last-child
-    border-right: none
+  &.first
+    //box-shadow: 0 0 20px rgba($black, 0.25)
+
+.column-header
+  overflow: hidden
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  height: $column-header-height
+  padding: 0 10%
+  background: $header-background
+  border-left: 1px solid $header-border
+  border-bottom: 2px solid $cyan6
+
+.column-body
+  overflow-y: auto
+  position: absolute
+  top: $column-header-height
+  bottom: 0
+  width: 100%
+  padding: rhythm(1) 10%
+  border-left: 1px solid $generator-body-border
+
+.header-label
+  display: block
+  color: $white
+
+.header-field
+  +adjust-font-size-to(24px)
+  color: $white
+  background: none
+  border: none
+  padding: 0
+
+.sex-select
+  +adjust-font-size-to(24px)
+  vertical-align: sub
+  background: none
+
+.contact-list
+  list-style-position: inside
+  padding: 0
+
+.contact
+  +trailing-border(1px, 0.5)
+  padding-top: rhythm(0.5)
+  border-color: $gray-lighter

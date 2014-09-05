@@ -1,24 +1,29 @@
+.occupation-column
+  @extend .generator-column
+  width: 17.5%
+  border-left: none
+
+.occupation-column-body
+  @extend .column-body
+  padding: 0
+
 .occupation-list
   list-style: none
-  overflow-y: auto
-  float: left
-  width: 13%
-  height: 100%
   margin: 0
   padding: 0
-  border-right: 1px solid black
 
 .occupation
   +user-select(none)
+  +transition(all 0.2s)
   cursor: default
   white-space: nowrap
   overflow: hidden
   text-overflow: ellipsis
-  padding: rhythm(0.5)
+  padding: rhythm(0.5) rhythm(1)
 
   &:hover
-    background: $gray
+    background: $gray-lighter
 
   &.current
-    background: $blue
+    background: $cyan3
     color: $white

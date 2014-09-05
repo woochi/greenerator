@@ -1,4 +1,4 @@
-{ol} = React.DOM
+{ol, div, a, img} = React.DOM
 OccupationItem = require("./occupation_item.coffee")
 
 OccupationList = React.createClass
@@ -10,12 +10,16 @@ OccupationList = React.createClass
     @props.character.off "change:occupation", @updateCurrentOccupation
 
   render: ->
-    ol className: "occupation-list",
-      for occupation in @props.occupations.models
-        OccupationItem
-          key: occupation.id
-          character: @props.character
-          occupation: occupation
+    div className: "occupation-column",
+      div className: "column-header",
+        img className: "logo", src: "/images/icon.svg"
+      div className: "occupation-column-body",
+        ol className: "occupation-list",
+          for occupation in @props.occupations.models
+            OccupationItem
+              key: occupation.id
+              character: @props.character
+              occupation: occupation
 
   updateCurrentOccupation: ->
     @forceUpdate()

@@ -1,4 +1,4 @@
-{dl, dt, dd} = React.DOM
+{dl, dt, dd, div, ul, li} = React.DOM
 
 PointCounter = React.createClass
 
@@ -13,11 +13,13 @@ PointCounter = React.createClass
     @props.skills.off "change:level", @onPointAllocation
 
   render: ->
-    dl {},
-      dt {}, "Occupation skill points"
-      dd {}, @state.occupationPoints
-      dt {}, "Interest skill points"
-      dd {}, @state.interestPoints
+    ul className: "counter-list",
+      li className: "counter",
+        div className: "counter-name", "Occupation points"
+        div className: "counter-value", @state.occupationPoints
+      li className: "counter",
+        div className: "counter-name", "Interest points"
+        div className: "counter-value", @state.interestPoints
 
   onPointAllocation: (skill) ->
     previous = Math.max(skill.get("base"), skill.previous("level"))

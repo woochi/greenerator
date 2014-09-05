@@ -1,5 +1,5 @@
 $base-font-size: 14px
-$base-line-height: 22px
+$base-line-height: 20px
 $base-font-family: Helvetica, sans-serif
 $base-font-weight: 400
 $base-font-color: #333
@@ -16,14 +16,18 @@ $h6-font-size: 16px
 $header-font-weight: $base-font-weight
 $header-color: $base-font-color
 
-%base-margin
-  margin: rhythm(1) 0
-
 html
   font-size: 100%
 
-body
+%base-margin
+  margin: rhythm(1) 0
+
+%base-font
   font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family
+  -webkit-font-smoothing: antialiased
+
+body
+  @extend %base-font
 
 %header
   @extend %base-margin
@@ -59,3 +63,6 @@ p
 
 ul, ol
   @extend %base-margin
+
++placeholder
+  color: $cyan2
