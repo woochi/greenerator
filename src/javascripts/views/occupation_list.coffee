@@ -11,7 +11,7 @@ OccupationList = React.createClass
 
   render: ->
     div className: "occupation-column",
-      div className: "column-header",
+      div className: "occupation-column-header",
         img className: "logo", src: "/images/icon.svg"
       div className: "occupation-column-body",
         ol className: "occupation-list",
