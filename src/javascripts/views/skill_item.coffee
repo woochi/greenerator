@@ -4,9 +4,17 @@ SkillItem = React.createClass
 
   componentDidMount: ->
     @props.skill.on "change:level", @onSkillAllocation
+    depends = @props.skill.get("depends")
+    if depends
+      for characteristic in depends
+        @props.character.on "change:#{characteristic}", @onSkillAllocation
 
   componentWillUnmount: ->
     @props.skill.off "change:level", @onSkillAllocation
+    depends = @props.skill.get("depends")
+    if depends
+      for characteristic in depends
+        @props.character.off "change:#{characteristic}", @onSkillAllocation
 
   render: ->
     skill = @props.skill
