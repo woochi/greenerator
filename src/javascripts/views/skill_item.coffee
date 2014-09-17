@@ -18,8 +18,12 @@ SkillItem = React.createClass
 
   render: ->
     skill = @props.skill
+    level = skill.get("level")
     base = skill.getBase(@props.character)
-    li key: skill.id, className: "skill",
+    className = React.addons.classSet
+      "skill": true
+      "allocated": level > base
+    li key: skill.id, className: className,
       label className: "skill-label",
         skill.get("name")
       input

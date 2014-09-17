@@ -1,6 +1,17 @@
+%emphasized-skill
+  color: $cyan6
+  font-weight: bold
+
 .skill
   +trailing-border(1px, 0.5)
   border-color: $gray-lighter
 
+  &.allocated
+    @extend %emphasized-skill
+
 .skill-input
   float: right
+  text-align: right
+
+  .allocated &
+    @extend %emphasized-skill

@@ -32,7 +32,9 @@ Investigator = React.createClass
                 onChange: @updateValue
       div className: "column-body",
         fieldset {},
-          legend {}, "Investigator details"
+          legend {},
+            i className: "fa fa-fw fa-pencil"
+            "Investigator details"
           ul {},
             li className: "detail",
               ul className: "auto-fill-list",
@@ -55,7 +57,9 @@ Investigator = React.createClass
             li className: "detail",
               input className: "longer", type: "text", name: "degrees", placeholder: "Colleges & degrees"
         fieldset {},
-          legend {}, "Contacts"
+          legend {},
+            i className: "fa fa-fw fa-users"
+            "Contacts"
           ol className: "contact-list",
             [1..3].map (i) ->
               li className: "contact",

@@ -1,13 +1,29 @@
 .stat-list
   list-style: none
-  margin: 0
   padding: 0
 
 .stat
   +trailing-border(1px, 0.5)
+  position: relative
   margin: 0
   padding-top: rhythm(0.5)
   border-color: $gray-lighter
+
+.stat-high
+  color: $cyan7
+  font-weight: bold
+
+  &::before
+    font-family: $icon-font
+    content: "\f0a6"
+    position: absolute
+    left: rhythm(-1)
+
+.stat-low
+
+  &::before
+    @extend .stat-high::before
+    content: "\f0a7"
 
 .stat-value
   float: right
