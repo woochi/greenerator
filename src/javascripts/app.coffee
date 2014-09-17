@@ -154,14 +154,14 @@ occupationsList = [
   {name: "Mercenary", skills: ["Bargain", "Bayonet", "Climb", "Club", "Firearms", "Punch", "Garrotte", "Grapple", "Head Butt", "Hide", "Jump", "Kick", "Knife", "Navigate", "Track", "Sneak", "Swim"]}
   {name: "Executive/Company Officer", skills: ["Accounting", "Bargain", "Credit Rating", "English", "English", "Fast Talk", "Persuade", "Psychology"]}
   {name: "Merchant Marine", skills: ["Anthropology", "Climb", "Electrical Repair", "Jump", "Mechaincal Repair", "Operate Heavy Machinery", "Other Language"]}
-  {name: "Student/Intern", skills: ["English", "Library Use"]}
+  {name: "Student/Intern", skills: ["English", "Library Use", "Art", "Astronomy", "Physics", "Natural History", "Anthropology", "Archeology"]}
   {name: "Con Man", skills: ["Bargain", "Disguise", "Fast Talk", "Listen", "Persuade", "Psychology", "Spot Hidden"]}
   {name: "Military Offier", skills: ["Bargain", "Credit Rating", "Dodge", "Fast Talk", "Punch", "Grapple", "Handgun", "Head Butt", "Hide", "Jump", "Kick", "Navigate", "Persuade", "Psychology", "Sneak"]}
   {name: "Stunt Man", skill: ["Climb", "Disguise", "Dodge", "Drive Auto", "Electrical Repair", "First Aid", "Punch", "Grapple", "Head Butt", "Jump", "Kick", "Mechanical Repair", "Pilot Aircraft", "Pilot Boat", "Ride", "Swim", "Throw"]}
   {name: "Miner", skills: ["Climb", "Geology", "Jump", "Operate Heavy Machinery", "Spot Hidden"]}
   {name: "Surveyor", skills: ["Accounting", "Bargain", "Library Use", "NAtural History", "Navigate", "Photography", "Spot Hidden"]}
   {name: "Missionary", skills: ["Anthropology", "Bargain", "English", "Occult", "Other Language", "Persuade", "Psychology"]}
-  {name: "Swimmer/Diver", skills: ["Other Language", "Swim"]}
+  {name: "Swimmer/Diver", skills: ["Other Language", "Swim", "Jump", "Kick", "Grapple", "Hide", "Dodge"]}
   {name: "Cowboy", skills: ["Accounting", "Bargain", "Credit Rating", "Drive Auto", "Firearms", "First Aid", "Jump", "Medicine", "Natural History", "Ride", "Rope"]}
   {name: "Mountain Climber", skills: ["Climb", "First Aid", "Jump", "Listen", "Navigate", "Other Language", "Photography", "Roping", "Track"]}
   {name: "Switchboard Operator", skills: ["Credit Rating", "English", "Fast Talk", "Listen", "Persuade", "Psychology"]}
