@@ -31,7 +31,7 @@ SkillItem = React.createClass
         onChange: @allocateSkill
 
   allocateSkill: (event) ->
-    @props.skill.allocate event.target.value
+    @props.skill.allocate event.target.value, @props.character
 
   onSkillAllocation: ->
     @forceUpdate()

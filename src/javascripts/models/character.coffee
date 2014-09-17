@@ -47,16 +47,16 @@ class Character extends Backbone.Model
       depends: ["intelligence"]
       get: (fields) -> fields.intelligence * 10
 
-  @generateName: ->
+  @generateName: (character) ->
     $.ajax
-      url: "http://api.randomuser.me/?gender=#{@get("sex")}",
+      url: "http://api.randomuser.me/?gender=#{character.get("sex")}",
       dataType: 'json'
 
   initialize: (attributes, options) ->
     @computedFields = new Backbone.ComputedFields(@)
 
   generateName: ->
-    Character.generateName().done =>
+    Character.generateName(@).done (data) =>
       TextHelper = require("../helpers/text.coffee")
       name = data.results[0].user.name
       @set "name", TextHelper.capitalize([name.first, name.last].join(" "))
