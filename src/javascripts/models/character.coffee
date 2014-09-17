@@ -1,7 +1,7 @@
 Skills = require("../collections/skills.coffee")
 
 sumSkillPoints = (sum, skill) ->
-  sum + skill.getCurrentAllocation()
+  sum + skill.getCurrentAllocation(@)
 
 educationAgeBonus = (baseAge, age) ->
   Math.round((age - baseAge) / 10)
@@ -70,8 +70,8 @@ class Character extends Backbone.Model
 
   getAvailableSkillPoints: (occupations, skills) ->
     [occupationSkills, interestSkills] = @getSkillGroups(occupations, skills)
-    occupationSkillPoints = occupationSkills.reduce sumSkillPoints, 0
-    interestSkillPoints = interestSkills.reduce sumSkillPoints, 0
+    occupationSkillPoints = occupationSkills.reduce sumSkillPoints.bind(@), 0
+    interestSkillPoints = interestSkills.reduce sumSkillPoints.bind(@), 0
     [@get("occupationSkillPoints") - occupationSkillPoints, @get("interestSkillPoints") - interestSkillPoints]
 
 module.exports = Character

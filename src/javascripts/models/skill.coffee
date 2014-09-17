@@ -3,11 +3,14 @@ class Skill extends Backbone.Model
     base: 0
     level: 0
 
-  allocate: (level) ->
-    return if level < @get("base") or level > 99
+  allocate: (level, character) ->
+    return if level < @getBase(character) or level > 99
     @set "level", level
 
-  getCurrentAllocation: ->
-    Math.max(0, @get("level") - @get("base"))
+  getCurrentAllocation: (character) ->
+    Math.max(0, @get("level") - @getBase(character))
+
+  getBase: (character) ->
+    if _.isFunction(@get("base")) then @get("base")(character) else @get("base")
 
 module.exports = Skill

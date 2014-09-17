@@ -10,15 +10,16 @@ SkillItem = React.createClass
 
   render: ->
     skill = @props.skill
+    base = skill.getBase(@props.character)
     li key: skill.id, className: "skill",
       label className: "skill-label",
         skill.get("name")
       input
         className: "skill-input"
         type: "number"
-        min: skill.get("base")
+        min: base
         max: 99
-        value: Math.max(skill.get("base"), skill.get("level"))
+        value: Math.max(base, skill.get("level"))
         onChange: @allocateSkill
 
   allocateSkill: (event) ->

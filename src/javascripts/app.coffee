@@ -18,7 +18,7 @@ skillList = [
   {id: 10, name: "Conceal", base: 15}
   {id: 11, name: "Credit Rating", base: 15}
   {id: 12, name: "Cthulhu Mythos", base: 0}
-  {id: 13, name: "Dodge", base: 0}
+  {id: 13, name: "Dodge", base: (character) -> character.get("dexterity") * 2}
   {id: 14, name: "Drive Auto", base: 20}
   {id: 15, name: "Electrical Repair", base: 10}
   {id: 16, name: "Fast Talk", base: 5}
@@ -39,7 +39,7 @@ skillList = [
   {id: 31, name: "Occult", base: 5}
   {id: 32, name: "Operate Heavy Machinery", base: 0}
   {id: 33, name: "Other Language", base: 0}
-  {id: 34, name: "Own Language", base: 0}
+  {id: 34, name: "Own Language", base: (character) -> character.get("education") * 5}
   {id: 35, name: "Persuade", base: 15}
   {id: 36, name: "Pharmacy", base: 0}
   {id: 37, name: "Photography", base: 10}

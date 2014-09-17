@@ -7,9 +7,13 @@ SkillList = React.createClass
 
   componentDidMount: ->
     @props.character.on "change:occupation", @onOccupationChange
+    @props.character.on "change:education", @onCharacteristicChange
+    @props.character.on "change:dexterity", @onCharacteristicChange
 
   componentWillUnmount: ->
     @props.character.off "change:occupation", @onOccupationChange
+    @props.character.off "change:education", @onCharacteristicChange
+    @props.character.off "change:dexterity", @onCharacteristicChange
 
   render: ->
     skillGroups = @props.character.getSkillGroups(@props.occupations, @props.skills)
@@ -37,10 +41,14 @@ SkillList = React.createClass
             @renderSkills interestSkills
 
   renderSkills: (skills) ->
+    character = @props.character
     skills.map (skill) ->
-      SkillItem(key: skill.id, skill: skill)
+      SkillItem(key: skill.id, skill: skill, character: character)
 
   onOccupationChange: (character, occupation) ->
+    @forceUpdate()
+
+  onCharacteristicChange: (character, characteristic) ->
     @forceUpdate()
 
 module.exports = SkillList
