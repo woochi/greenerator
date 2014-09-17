@@ -67,18 +67,20 @@ body, html
   color: $white
   background: none
   border: none
-  padding: 0
+  padding: 0 !important
+  border: none !important
+
+  +placeholder
+    color: $cyan2
 
 .sex-select
-  +adjust-font-size-to(24px)
-  vertical-align: sub
-  background: none
+  +adjust-font-size-to(18px, 1)
 
 .contact-list
-  list-style-position: inside
+  list-style: none
   padding: 0
 
-.contact
-  +trailing-border(1px, 0.5)
-  padding-top: rhythm(0.5)
-  border-color: $gray-lighter
+.age-field
+  @extend select
+  +adjust-font-size-to(18px, 1)
+  width: rhythm(3)

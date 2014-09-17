@@ -12,7 +12,8 @@
     "underscore": "./build/underscore/underscore.js",
     "backbone": "./build/backbone/backbone.js",
     "react-backbone": "./build/react-backbone/react-backbone.js",
-    "react-mixin-manager": "./build/react-mixin-manager/react-mixin-manager.js"
+    "react-mixin-manager": "./build/react-mixin-manager/react-mixin-manager.js",
+    "backbone-computed-fields": "./build/backbone-computedfields/src/backbone.computedfields.js"
   },
   "browserify": {
     "transform": [
@@ -25,7 +26,8 @@
     "jquery": "$",
     "react": "React",
     "underscore": "_",
-    "backbone": "Backbone"
+    "backbone": "Backbone",
+    "backbone-computed-fields": "ComputedFields"
   },
   "devDependencies": {
     "browserify": "5.11.0",

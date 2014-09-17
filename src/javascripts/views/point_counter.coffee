@@ -2,40 +2,30 @@
 
 PointCounter = React.createClass
 
-  getInitialState: ->
-    occupationPoints: @props.character.occupationSkillPoints()
-    interestPoints: @props.character.interestSkillPoints()
-
   componentDidMount: ->
+    @props.character.on "change:occupationSkillPoints", @onPointAllocation
+    @props.character.on "change:interestSkillPoints", @onPointAllocation
     @props.skills.on "change:level", @onPointAllocation
 
   componentWillUnmount: ->
+    @props.character.off "change:occupationSkillPoints", @onPointAllocation
+    @props.character.off "change:interestSkillPoints", @onPointAllocation
     @props.skills.off "change:level", @onPointAllocation
 
   render: ->
+    skillPoints = @props.character.getAvailableSkillPoints(@props.occupations, @props.skills)
+    occupationPoints = skillPoints[0]
+    interestPoints = skillPoints[1]
+
     ul className: "counter-list",
       li className: "counter",
         div className: "counter-name", "Occupation points"
-        div className: "counter-value", @state.occupationPoints
+        div className: "counter-value", occupationPoints
       li className: "counter",
         div className: "counter-name", "Interest points"
-        div className: "counter-value", @state.interestPoints
+        div className: "counter-value", interestPoints
 
-  onPointAllocation: (skill) ->
-    previous = Math.max(skill.get("base"), skill.previous("level"))
-    current = skill.get("level")
-    diff = current - previous
-    occupation = @props.character.get("occupation")
-    occupationSkills = @props.occupations.get(occupation).get("skills")
-
-    if skill.id in occupationSkills
-      currentPoints = @state["occupationPoints"]
-      state = occupationPoints: currentPoints - diff
-    else
-      currentPoints = @state["interestPoints"]
-      state = interestPoints: currentPoints - diff
-
-    return unless currentPoints > 0
-    @setState state
+  onPointAllocation: ->
+    @forceUpdate()
 
 module.exports = PointCounter

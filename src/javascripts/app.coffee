@@ -2,6 +2,7 @@ $ = require("jquery")
 React = require("react")
 _ = require("underscore")
 Backbone = require("backbone")
+require("backbone-computed-fields")
 Generator = require("./views/generator.coffee")
 
 skillList = [

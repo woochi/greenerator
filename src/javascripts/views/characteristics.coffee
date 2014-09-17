@@ -3,6 +3,12 @@ TextHelper = require("../helpers/text.coffee")
 
 Characteristics = React.createClass
 
+  componentWillMount: ->
+    @props.character.on "change", @update
+
+  componentWillUnmount: ->
+    @props.character.on "change", @update
+
   render: ->
     character = @props.character
     options = className: "charasteristic"
@@ -31,5 +37,8 @@ Characteristics = React.createClass
 
   rerollCharasteristics: ->
     # TODO
+
+  update: ->
+    @forceUpdate()
 
 module.exports = Characteristics

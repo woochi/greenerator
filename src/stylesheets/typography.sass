@@ -64,5 +64,19 @@ p
 ul, ol
   @extend %base-margin
 
-+placeholder
-  color: $cyan2
+.auto-fill-list
+  list-style: none
+  padding: 0
+
+  > li
+    overflow: hidden
+    padding-left: rhythm(0.5)
+
+  > li:last-child
+    padding-left: 0
+
+.left
+  float: left
+
+.right
+  float: right

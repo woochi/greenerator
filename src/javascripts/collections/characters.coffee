@@ -16,24 +16,21 @@ class Characters extends Backbone.Collection
 
     new Character
       sex: "male"
-      age: education + 6 # min: edu + 6, +1 edu for each +10 years, -1 STR/CON/DEX/APP for +10 years after 40 years
+      baseAge: education + 6 # min: edu + 6, +1 edu for each +10 years, -1 STR/CON/DEX/APP for +10 years after 40 years
+      age: education + 6
       nationality: "Jamaican"
       birthplace: "Jamaica Town"
       occupation: 0
       degrees: null
       disorders: null
-      strength: strength # 3d6
+      baseStrength: strength # 3d6
       constitution: constitution # 3d6
       size: size # 2d6 + 6
       dexterity: dexterity # 3d6
       appearance: appearance # 3d6
-      sanity: 5 * power # 5x pow
       intelligence: intelligence # 2d6 + 6
       power: power # 3d6
-      education: education # 3d6 + 3
-      idea: 5 * intelligence # 5x int
-      luck: 5 * power # 5x pow
-      knowledge: 5 * education #5x edu
+      baseEducation: education # 3d6 + 3
       magic: power # pow
       hits: Math.ceil((constitution + size) / 2) # (con + size) / 2, rounded up
 

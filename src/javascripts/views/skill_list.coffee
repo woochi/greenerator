@@ -12,20 +12,15 @@ SkillList = React.createClass
     @props.character.off "change:occupation", @onOccupationChange
 
   render: ->
-    occupationSkills = []
-    interestSkills = []
-    occupation = @props.occupations.get @props.character.get("occupation")
-    @props.skills.each (skill) ->
-      if skill.id in occupation.get("skills")
-        occupationSkills.push skill
-      else
-        interestSkills.push skill
+    skillGroups = @props.character.getSkillGroups(@props.occupations, @props.skills)
+    occupationSkills = skillGroups[0]
+    interestSkills = skillGroups[1]
 
     div className: "generator-column",
       div className: "column-header",
         PointCounter
-          occupations: @props.occupations
           character: @props.character
+          occupations: @props.occupations
           skills: @props.skills
       div className: "column-body",
         fieldset {},
