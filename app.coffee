@@ -6,6 +6,7 @@ cookieParser = require("cookie-parser")
 bodyParser = require("body-parser")
 routes = require("./routes/index")
 users = require("./routes/users")
+download = require("./routes/download")
 app = express()
 
 # view engine setup
@@ -14,7 +15,7 @@ app.set "view engine", "jade"
 app.use favicon("./src/images/favicon.png")
 app.use logger("dev")
 app.use bodyParser.json()
-app.use bodyParser.urlencoded()
+app.use bodyParser.urlencoded(extended: true)
 app.use cookieParser()
 app.use require("stylus").middleware(path.join(__dirname, "public"))
 app.use express.static(path.join(__dirname, "build"))

@@ -1,6 +1,19 @@
 .stat-list
   list-style: none
+  margin: rhythm(0.5) 0 0
   padding: 0
+
+  > li:last-child
+    border-bottom: none
+    padding-bottom: rhythm(1)
+
+.stat-list-computed
+  @extend .stat-list
+  margin: 0 0 rhythm(0.5)
+
+  > li:first-child
+    +leading-border(2px, 1)
+    border-top-color: $cyan5
 
 .stat
   +trailing-border(1px, 0.5)
@@ -25,8 +38,31 @@
     @extend .stat-high::before
     content: "\f0a7"
 
+%number
+  float: right
+
 .stat-value
   float: right
+  width: rhythm(1.5)
+  background: $white
+  border: 1px solid $gray-lighter
+  border-radius: 2px
+  text-align: center
+
+  &:hover
+    cursor: pointer
+    border-color: $cyan5
+
+  &.dragging
+    border-color: $cyan5
+
+  &.drag-over
+    background: $cyan5
+    border-color: $cyan5
+    color: $white
+
+.stat-value-computed
+  @extend %number
 
 .point-list
   list-style: none

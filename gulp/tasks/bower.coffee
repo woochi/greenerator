@@ -2,4 +2,4 @@ gulp = require("gulp")
 bower = require('gulp-bower')
 
 gulp.task 'bower', ->
-  bower().pipe gulp.dest('./build/')
+  bower("./bower_components").pipe gulp.dest('./build/')
