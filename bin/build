@@ -1,0 +1,5 @@
+#!/bin/bash
+export GEM_HOME=$PWD/gems
+mkdir -p $GEM_HOME
+LC_ALL=en_US.UTF-8 gem install bundler   # LC_ALL required by bundler
+$GEM_HOME/bin/bundle install
