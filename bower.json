@@ -21,5 +21,10 @@
     "backbone.virtualcollection": "0.5.1",
     "backbone-computedfields": "0.0.7",
     "foundation": "5.4.4"
+  },
+  "overrides": {
+    "react": {
+      "main": "react-with-addons.js"
+    }
   }
 }

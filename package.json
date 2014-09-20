@@ -14,13 +14,13 @@
     "node": "0.10.32"
   },
   "browser": {
-    "jquery": "./build/jquery/dist/jquery.js",
-    "react": "./build/react/react-with-addons.js",
-    "underscore": "./build/underscore/underscore.js",
-    "backbone": "./build/backbone/backbone.js",
-    "react-backbone": "./build/react-backbone/react-backbone.js",
-    "react-mixin-manager": "./build/react-mixin-manager/react-mixin-manager.js",
-    "backbone-computed-fields": "./build/backbone-computedfields/src/backbone.computedfields.js"
+    "jquery": "./build/javascripts/jquery.js",
+    "react": "./build/javascripts/react-with-addons.js",
+    "underscore": "./build/javascripts/underscore.js",
+    "backbone": "./build/javascripts/backbone.js",
+    "react-backbone": "./build/javascripts/react-backbone.js",
+    "react-mixin-manager": "./build/javascripts/react-mixin-manager.js",
+    "backbone-computed-fields": "./build/javascripts/backbone.computedfields.js"
   },
   "browserify": {
     "transform": [
@@ -59,6 +59,7 @@
     "gulp-autoprefixer": "*",
     "hbsfy": "~1.3.2",
     "vinyl-source-stream": "~0.1.1",
-    "bower": "1.3.11"
+    "bower": "1.3.11",
+    "main-bower-files": "*"
   }
 }

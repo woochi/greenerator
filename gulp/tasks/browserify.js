@@ -3,7 +3,7 @@ var gulp         = require('gulp');
 var handleErrors = require('../util/handleErrors');
 var source       = require('vinyl-source-stream');
 
-gulp.task('browserify', function(){
+gulp.task('browserify', ['bower-files'], function(){
 	return browserify({
 			entries: ['./src/javascripts/app.coffee'],
 			extensions: ['.coffee', '.hbs'],
