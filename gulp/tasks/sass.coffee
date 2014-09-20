@@ -5,7 +5,7 @@ autoprefixer = require("gulp-autoprefixer")
 
 gulp.task "sass", ->
   gulp.src("src/stylesheets/app.sass")
-    .pipe(sass(compass: true, loadPath: ["bower_components/foundation/scss"], bundleExec: true))
+    .pipe(sass(compass: true, loadPath: ["bower_components/foundation/scss"]))
     .on('error', gutil.log)
 		.on('error', gutil.beep)
     .pipe(autoprefixer("last 1 version", "> 1%", "ie 8", "ie 7"))
