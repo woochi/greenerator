@@ -1,11 +1,7 @@
 {
-  "name": "gulp-starter",
+  "name": "greenerator",
   "version": "0.1.1",
   "description": "Gulp starter with common tasks and scenarios",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/greypants/gulp-starter.git"
-  },
   "scripts": {
     "start": "node index.js",
     "postinstall": "node node_modules/.bin/gulp default"
