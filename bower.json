@@ -1,0 +1,25 @@
+{
+  "name": "greenerator",
+  "version": "0.0.1",
+  "authors": [
+    "Mikko Kivelä <mikkos.s.kivela@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "2.1.1",
+    "react": "0.11.1",
+    "underscore": "1.7.0",
+    "backbone": "1.1.2",
+    "react-backbone": "~0.10.0",
+    "backbone.virtualcollection": "0.5.1",
+    "backbone-computedfields": "0.0.7",
+    "foundation": "5.4.4"
+  }
+}
