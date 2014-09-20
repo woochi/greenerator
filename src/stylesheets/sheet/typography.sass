@@ -1,0 +1,19 @@
+$base-font-size: 10px
+$base-line-height: 18px
+$base-font-family: Georgia, serif
+
+$rhythm-unit: "px"
+
+body, html
+  width: 100%
+  margin: 0
+  padding: 0
+  font-size: 100%
+
+%base-font
+  font-size: $base-font-size
+  line-height: $base-line-height
+  font-family: $base-font-family
+
+body
+  @extend %base-font

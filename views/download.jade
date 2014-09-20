@@ -1,0 +1,78 @@
+extends layout
+
+block head
+  link(rel='stylesheet', href='/stylesheets/sheet.css')
+
+block content
+  form#character-sheet
+    .row
+      .column.small-6
+        fieldset
+          ul
+            li.detail
+              label Investigator name
+              input(type="text")
+            li.detail
+              label Occupation
+              input(type="text")
+            li.detail
+              label Colleges, degrees
+              input(type="text")
+            li.detail
+              label Birthplace
+              input(type="text")
+            li.detail
+              label Mental disorders
+              input(type="text")
+            li.detail.short
+              label Sex
+              input(type="text")
+            li.detail.short
+              label Age
+              input(type="text")
+      .column.small-6
+        fieldset
+          legend Characteristics & rolls
+          - characteristics = ["STR", "DEX", "INT", "Idea", "CON", "APP", "POW", "Luck", "SIZ", "SAN", "EDU", "Know"]
+          ul
+            - for characteristic in characteristics
+              li.stat
+                label= characteristic
+                input(type="number")
+            li.stat.short
+              label 99 - Cthulhu mythos
+              input(type="number")
+            li.stat.short
+              label Damage bonus
+              input(type="number")
+    .row
+      .column.small-6
+        fieldset.field-san
+          legend Sanity points
+          ul
+            li.san-point Insane
+            - for (var i=0; i < 100; i++)
+              li.san-point= i
+      .column.small-3
+        fieldset.field-mag
+          legend Magic points
+          ul
+            li.mag-point Unconscious
+            - for (var i=0; i < 44; i++)
+              li.mag-point= i
+      .column.small-3
+        fieldset.field-hit
+          legend Hit points
+          ul
+            li.hit-point Dead
+            - for (var i=-2; i < 44; i++)
+              li.hit-point= i
+    .row
+      .column.small-12
+        fieldset
+          legend Investigator skills
+    .row
+      .column.small-12
+        fieldset
+          legend Weapons
+          table
