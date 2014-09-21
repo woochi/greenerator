@@ -31,10 +31,5 @@ class Characters extends Backbone.Collection
       intelligence: intelligence # 2d6 + 6
       power: power # 3d6
       baseEducation: education # 3d6 + 3
-      magic: power # pow
-      hits: Math.ceil((constitution + size) / 2) # (con + size) / 2, rounded up
-
-    # Occupation skill points: EDU x 20
-    # Personal interest points: INT x 10 (can't raise cthulhu mythos)
 
 module.exports = Characters

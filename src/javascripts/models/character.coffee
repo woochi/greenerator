@@ -98,4 +98,25 @@ class Character extends Backbone.Model
     interestSkillPoints = interestSkills.reduce sumSkillPoints.bind(@), 0
     [@get("occupationSkillPoints") - occupationSkillPoints, @get("interestSkillPoints") - interestSkillPoints]
 
+  rerollCharacteristics: ->
+    Dice = require("../dice.coffee")
+    strength = Dice.roll("3d6")
+    constitution = Dice.roll("3d6")
+    size = Dice.roll("2d6+6")
+    appearance = Dice.roll("3d6")
+    dexterity = Dice.roll("3d6")
+    intelligence = Dice.roll("2d6+6")
+    power = Dice.roll("3d6")
+    education = Dice.roll("3d6+3")
+
+    @set
+      baseStrength: strength
+      constitution: constitution
+      size: size
+      appearance: appearance
+      dexterity: dexterity
+      intelligence: intelligence
+      power: power
+      baseEducation: education
+
 module.exports = Character

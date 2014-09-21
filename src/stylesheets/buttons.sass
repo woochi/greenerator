@@ -1,0 +1,20 @@
+%button
+  +adjust-font-size-to(12px)
+  +user-select(none)
+  cursor: pointer
+
+.button-cyan
+  @extend %button
+  vertical-align: middle
+  background: $cyan5
+  padding: rhythm(0.25) rhythm(0.5)
+  color: $white
+  border-radius: 2px
+  font-weight: 600
+  margin-left: rhythm(0.5)
+
+  &:hover
+    background: $cyan6
+
+  &:active
+    background: $cyan7

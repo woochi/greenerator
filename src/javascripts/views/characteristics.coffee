@@ -32,6 +32,7 @@ Characteristics = React.createClass
           legend {},
             i className: "fa fa-fw fa-calculator"
             "Characteristics"
+            a className: "button-cyan", onClick: @rerollCharasteristics, "Re-roll"
           ul className: "stat-list",
             baseStats.map (stat) =>
               valueOptions =
@@ -59,7 +60,7 @@ Characteristics = React.createClass
                 span className: "stat-value-computed", character.get(stat)
 
   rerollCharasteristics: ->
-    # TODO
+    @props.character.rerollCharacteristics()
 
   update: ->
     @forceUpdate()
