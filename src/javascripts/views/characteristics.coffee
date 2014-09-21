@@ -18,7 +18,7 @@ Characteristics = React.createClass
     baseStats = ["strength", "dexterity", "intelligence", 
       "constitution", "appearance", "power",
       "size", "education"]
-    calculatedStats = ["sanity", "idea", "luck", "knowledge"]
+    calculatedStats = ["sanity", "idea", "luck", "knowledge", "damageBonus"]
     points = ["sanity", "magic", "hits"]
     div className: "generator-column first",
       div className: "column-header",

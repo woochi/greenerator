@@ -12,13 +12,16 @@ strengthAgeHandicap = (age) ->
 calculateEducation = (baseEducation, baseAge, age) ->
   baseEducation + educationAgeBonus(baseAge, age)
 
+calculateStrength = (baseStrength, age) ->
+  baseStrength - strengthAgeHandicap(age)
+
 class Character extends Backbone.Model
   defaults:
     sex: "male"
   computed:
     strength:
       depends: ["baseStrength", "age"]
-      get: (fields) -> fields.baseStrength - strengthAgeHandicap(fields.age)
+      get: (fields) -> calculateStrength(fields.baseStrength, fields.age)
     education:
       depends: ["baseEducation", "baseAge", "age"]
       get: (fields) -> calculateEducation(fields.baseEducation, fields.baseAge, fields.age)
@@ -46,6 +49,27 @@ class Character extends Backbone.Model
     interestSkillPoints:
       depends: ["intelligence"]
       get: (fields) -> fields.intelligence * 10
+    damageBonus:
+      depends: ["baseStrength", "age", "size"]
+      get: (fields) ->
+        sum = calculateStrength(fields.baseStrength, fields.age) + fields.size
+        if (sum < 13)
+          bonus = "-1D6"
+        else if (sum < 17)
+          bonus = "-1D4"
+        else if sum < 25
+          bonus = 0
+        else if sum < 33
+          bonus = "1D4"
+        else if sum < 41
+          bonus = "1D6"
+        else if sum < 57
+          bonus = "2D6"
+        else if sum < 73
+          bonus = "3D6"
+        else
+          bonus = "4D6"
+        bonus
 
   @generateName: (character) ->
     $.ajax
