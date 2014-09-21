@@ -7,45 +7,45 @@ Generator = require("./views/generator.coffee")
 
 skillList = [
   {id: 1, name: "Accounting", base: 10}
-  {id: 2, name: "Anthropology", base: 0}
-  {id: 3, name: "Archaelogy", base: 0}
+  {id: 2, name: "Anthropology", base: 1}
+  {id: 3, name: "Archaelogy", base: 1}
   {id: 4, name: "Art", base: 5}
-  {id: 5, name: "Astronomy", base: 0}
+  {id: 5, name: "Astronomy", base: 1}
   {id: 6, name: "Bargain", base: 5}
-  {id: 7, name: "Biology", base: 0}
-  {id: 8, name: "Chemistry", base: 0}
+  {id: 7, name: "Biology", base: 1}
+  {id: 8, name: "Chemistry", base: 1}
   {id: 9, name: "Climb", base: 40}
   {id: 10, name: "Conceal", base: 15}
   {id: 11, name: "Credit Rating", base: 15}
-  {id: 12, name: "Cthulhu Mythos", base: 0}
+  {id: 12, name: "Cthulhu Mythos", base: 1}
   {id: 13, name: "Dodge", depends: ["dexterity"], base: (character) -> character.get("dexterity") * 2}
   {id: 14, name: "Drive Auto", base: 20}
   {id: 15, name: "Electrical Repair", base: 10}
   {id: 16, name: "Fast Talk", base: 5}
   {id: 17, name: "First Aid", base: 30}
-  {id: 18, name: "Geology", base: 0}
+  {id: 18, name: "Geology", base: 1}
   {id: 19, name: "Hide", base: 10}
   {id: 20, name: "History", base: 20}
   {id: 21, name: "Jump", base: 25}
   {id: 22, name: "Law", base: 5}
   {id: 23, name: "Library Use", base: 25}
   {id: 24, name: "Listen", base: 25}
-  {id: 25, name: "Locksmith", base: 0}
-  {id: 26, name: "Martial Arts", base: 0}
+  {id: 25, name: "Locksmith", base: 1}
+  {id: 26, name: "Martial Arts", base: 1}
   {id: 27, name: "Mechanical Repair", base: 20}
   {id: 28, name: "Medicine", base: 5}
   {id: 29, name: "Natural History", base: 10}
   {id: 30, name: "Navigate", base: 10}
   {id: 31, name: "Occult", base: 5}
-  {id: 32, name: "Operate Heavy Machinery", base: 0}
-  {id: 33, name: "Other Language", base: 0}
+  {id: 32, name: "Operate Heavy Machinery", base: 1}
+  {id: 33, name: "Other Language", base: 1}
   {id: 34, name: "Own Language", depends: ["education"], base: (character) -> character.get("education") * 5}
   {id: 35, name: "Persuade", base: 15}
-  {id: 36, name: "Pharmacy", base: 0}
+  {id: 36, name: "Pharmacy", base: 1}
   {id: 37, name: "Photography", base: 10}
-  {id: 38, name: "Physics", base: 0}
-  {id: 39, name: "Pilot", base: 0}
-  {id: 40, name: "Psychoanalysis", base: 0}
+  {id: 38, name: "Physics", base: 1}
+  {id: 39, name: "Pilot", base: 1}
+  {id: 40, name: "Psychoanalysis", base: 1}
   {id: 41, name: "Psychology", base: 5}
   {id: 42, name: "Ride", base: 5}
   {id: 43, name: "Sneak", base: 10}
@@ -68,11 +68,11 @@ skillList = [
   {id: 60, name: "Head Butt", base: 10}
   {id: 61, name: "Kick", base: 25}
   {id: 62, name: "Grapple", base: 25}
-  {id: 63, name: "Block", base: 0}
-  {id: 64, name: "Roping", base: 0}
-  {id: 65, name: "Disguise", base: 0}
-  {id: 66, name: "Forensics", base: 0}
-  {id: 67, name: "Hypnotism", base: 0}
+  {id: 63, name: "Block", base: 1}
+  {id: 64, name: "Roping", base: 1}
+  {id: 65, name: "Disguise", base: 1}
+  {id: 66, name: "Forensics", base: 1}
+  {id: 67, name: "Hypnotism", base: 1}
 ]
 
 occupationsList = [
